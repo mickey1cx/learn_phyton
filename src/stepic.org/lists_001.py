@@ -17,3 +17,10 @@ else:
             new_list.append(list[i - 1] + list[i + 1])
     for i in new_list:
         print(i, end=" ")
+
+    print()
+    print(*new_list)    # !!! RTFM
+
+    # !!! https://stepik.org/lesson/3368/step/10?discussion=346150&thread=solutions&unit=951
+    for i in range(lenght):
+        print(list[i - 1] + list[i + 1 - lenght], end=" ")
