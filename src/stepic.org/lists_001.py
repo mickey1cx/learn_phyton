@@ -1,6 +1,6 @@
 # https://stepik.org/lesson/3368/step/10?unit=951
 
-str = input()
+str = "1 3 5 6 10"  # input()
 list = [int(i) for i in str.split()]
 lenght = len(list)
 
@@ -8,7 +8,7 @@ if lenght == 1:
     print(list[0])
 else:
     new_list = []
-    for i in range(0, lenght):
+    for i in range(lenght):
         if i == 0:
             new_list.append(list[1] + list[-1])
         elif i == lenght - 1:
