@@ -29,7 +29,3 @@ while counter < count_numbers ** 2:
     y += dy
 
 [([print(matrix[i][j], end=' ') for j in range(count_numbers)], print()) for i in range(count_numbers)]
-
-
-
-
