@@ -12,10 +12,11 @@ dx, dy = 1, 0
 len_direction = [count_numbers, count_numbers - 1]
 len_type = 0
 
+# 1
+
 while counter < count_numbers ** 2:
     counter += 1
     matrix[y][x] = counter
-
     step += 1
     if len_direction[len_type] == step:
         len_direction[len_type] -= 1
@@ -24,7 +25,21 @@ while counter < count_numbers ** 2:
         direction = (direction + 1) % 4
         dx = direction_type[direction][0]
         dy = direction_type[direction][1]
+    x += dx
+    y += dy
 
+[([print(matrix[i][j], end=' ') for j in range(count_numbers)], print()) for i in range(count_numbers)]
+
+# 2
+
+while counter < count_numbers ** 2:
+    counter += 1
+    matrix[y][x] = counter
+    new_x, new_y = x + dx, y + dy
+    if (0 <= new_x < count_numbers) and (0 <= new_y < count_numbers) and matrix[new_y][new_x] == 0:
+        x, y = new_x, new_y
+    else:
+        dx, dy = -dy, dx
     x += dx
     y += dy
 
