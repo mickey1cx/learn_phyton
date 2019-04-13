@@ -1,20 +1,29 @@
 # https://stepik.org/lesson/3369/step/10?unit=952
 
-string_list = ["9 5 3", "0 7 -1", "-5 2 9"]
+# string_list = ["9 5 3", "0 7 -1", "-5 2 9"]
+
 matrix = []
+rows = 0
+columns = 0
+while True:
+    data = input()
+    if data == "end":
+        break
+    else:
+        row = [int(i) for i in data.split()]
+        matrix.append(row)
+        rows += 1
+        columns = max(columns, len(row))
 
-columns = 3
-rows = 3
+# 1
 result = [[0] * columns for row in range(rows)]
+for i in range(rows):
+    for j in range(columns):
+        result[i][j] = matrix[i-1][j] + matrix[(i+1) % rows][j] + matrix[i][j-1] + matrix[i][(j+1) % columns]
 
-for element in string_list:
-    matrix.append([int(i) for i in element.split()])
+for row in result:
+    print(*row)
 
-for i in range(columns):
-    for j in range(rows):
-        over_i = i + 1 if i + 1 < columns else 0
-        over_j = j + 1 if j + 1 < rows else 0
-        result[i][j] = matrix[i-1][j] + matrix[over_i][j] + matrix[i][j-1] + matrix[i][over_j]
-
-print(*matrix)
-print(*result)
+# 2
+[([print(matrix[i - 1][j] + matrix[i][j - 1] + matrix[i][(j + 1) % columns] + matrix[(i + 1) % rows][j], end=' ')
+   for j in range(columns)], print()) for i in range(rows)]
