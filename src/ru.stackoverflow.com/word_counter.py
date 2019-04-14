@@ -15,3 +15,9 @@ for i in range(len(neps)):
             dict[slova[w]] = 1
         else:
             dict[slova[w]] += 1
+
+# some magic
+
+from itertools import chain
+from collections import Counter
+frequencies = Counter(chain.from_iterable(i.split() for i in neps))
