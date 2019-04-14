@@ -7,7 +7,7 @@ def modify_list(l):
         if l[i] % 2 == 0:
             new_l.append(l[i] // 2)
     l.clear()
-    for i in new_l:  # l.extend(newlist)
+    for i in new_l:  # l.extend(new_l); l += new_l
         l.append(i)
 
 
