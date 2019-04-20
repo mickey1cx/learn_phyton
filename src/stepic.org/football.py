@@ -27,5 +27,7 @@ for i in range(count):
     result(command2, data[3], data[1])
 
 for i, value in commands.items():
-    print(i + ":", end="")
-    print(*value)
+    print(i + ":", *value)
+    # print(*value)
+
+
