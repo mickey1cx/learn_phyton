@@ -19,3 +19,6 @@ l = re.findall('(\d*)(\w)', data)
 print()
 for count, letter in l:
     print(letter * (1 if count == '' else int(count)), end='')
+
+# https://stepik.org/lesson/21300/step/2?adaptive=true&discussion=962418&thread=solutions&unit=5101
+# yield sample
