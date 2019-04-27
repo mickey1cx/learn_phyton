@@ -4,11 +4,9 @@ import re
 
 
 def split_decode_series(string):
-    new_list = []
     for count, letter in re.findall('(\d*)(\w)', string):
-        new_list.append((1 if count == '' else int(count), letter))
-    return new_list
+        yield (1 if count == '' else int(count), letter)
 
 
-print(split_decode_series('2a3bB'))   # [(2, 'a'), (3, 'b'), (1, 'B')]
-print(split_decode_series('a'))       # [(1, 'a')]
+print(list(split_decode_series('2a3bB')))   # [(2, 'a'), (3, 'b'), (1, 'B')]
+print(list(split_decode_series('a')))       # [(1, 'a')]
