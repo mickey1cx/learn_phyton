@@ -8,5 +8,12 @@ def split_decode_series(string):
         yield 1 if count == '' else int(count), letter
 
 
-print(list(split_decode_series('2a3bB')))   # [(2, 'a'), (3, 'b'), (1, 'B')]
-print(list(split_decode_series('a')))       # [(1, 'a')]
+def decode_series(series):
+    result = ''
+    for count, letter in series:
+        result += letter * count
+    return result
+
+
+series = split_decode_series('2a3bB')
+print(decode_series(series))           # aabbbB
