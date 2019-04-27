@@ -15,5 +15,9 @@ def decode_series(series):
     return result
 
 
-series = split_decode_series('2a3bB')
-print(decode_series(series))           # aabbbB
+def rle_decode(string):
+    series = split_decode_series('2a3bB')
+    return decode_series(series)
+
+
+print(rle_decode('2a3bB'))  # aabbbB
